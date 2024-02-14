@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Geometry Genius</title>
+</head>
+
+<body>
+
+    <header></header>
+    <main>
+        <section class="flex p-5 gap-7">
+            <!-- card container -->
+            <div
+                class="grid flex-1 justify-center grid-cols-[repeat(auto-fit_,_minmax(250px,_400px))] grid-flow-row gap-10 ">
+                <!-- triangle card -->
+                <div class="card bg-base-100 shadow-xl">
+                    <figure><img class="pt-3" src="./images/triangle.png" alt="Triangle" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title w-auto mx-auto mb-2">Triangle</h2>
+                        <p class="text-center mb-3">Area (A) = 0.5 x b x h</p>
+                        <div class="flex justify-center gap-3 mb-2">
+                            <input id="triangle-base" class="w-20 h-8 outline-none p-2 pr-0 rounded" type="number"
+                                placeholder="b">
+                            <span>cm</span>
+                            <input id="triangle-height" class="w-20 h-8 outline-none p-2 pr-0 rounded" type="number"
+                                placeholder="h">
+                            <span>cm</span>
+                        </div>
+                        <div onclick="triangleCalculate()" class="card-actions">
+                            <button class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- rectangle card -->
+                <div class="card bg-base-100 shadow-xl">
+                    <figure><img class="pt-3" src="./images/rectangle.png" alt="Rectangle" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title w-auto mx-auto mb-2">Rectangle</h2>
+                        <p class="text-center mb-3">Area (A) = w x l</p>
+                        <div class="flex justify-center gap-3 mb-2">
+                            <input id="rectangle-width" class="w-20 h-8 outline-none p-2 pr-0 rounded" type="number"
+                                placeholder="w">
+                            <span>cm</span>
+                            <input id="rectangle-length" class="w-20 h-8 outline-none p-2 pr-0 rounded" type="number"
+                                placeholder="l">
+                            <span>cm</span>
+                        </div>
+                        <div onclick="rectangleCalculate()" class="card-actions">
+                            <button class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- parallelism card -->
+                <div class="card bg-base-100 shadow-xl">
+                    <figure><img class="pt-3" src="./images/parallelogram.png" alt="Triangle" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title w-auto mx-auto mb-2">Parallelism</h2>
+                        <p class="text-center mb-3">Area (A) = b x h</p>
+                        <div class="flex justify-center gap-3 mb-2">
+                            <input id="parallelism-base" class="w-20 h-8 outline-none p-2 pr-0 rounded" type="number"
+                                placeholder="b">
+                            <span>cm</span>
+                            <input id="parallelism-height" class="w-20 h-8 outline-none p-2 pr-0 rounded" type="number"
+                                placeholder="h">
+                            <span>cm</span>
+                        </div>
+                        <div onclick="parallelismCalculate()" class="card-actions">
+                            <button class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- rhombus card -->
+                <div class="card bg-base-100 shadow-xl">
+                    <figure><img class="pt-3" src="./images/rhombus.png" alt="Triangle" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title w-auto mx-auto mb-2">Rhombus</h2>
+                        <p class="text-center mb-3">Area (A) = d1 x d2</p>
+                        <div class="flex justify-center gap-3 mb-2">
+                            <input id="rhombus-d1" class="w-20 h-8 outline-none p-2 pr-0 rounded" type="number"
+                                placeholder="d1">
+                            <span>cm</span>
+                            <input id="rhombus-d2" class="w-20 h-8 outline-none p-2 pr-0 rounded" type="number"
+                                placeholder="d2">
+                            <span>cm</span>
+                        </div>
+                        <div onclick="rhombusCalculate()" class="card-actions">
+                            <button class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- pentagon card -->
+                <div class="card bg-base-100 shadow-xl">
+                    <figure><img class="pt-3" src="./images/pentagon.png" alt="Triangle" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title w-auto mx-auto mb-2">Pentagon</h2>
+                        <p class="text-center mb-3">Area (A) = p x b</p>
+                        <div class="flex justify-center gap-3 mb-2">
+                            <input id="pentagon1" class="w-20 h-8 outline-none p-2 pr-0 rounded" type="number"
+                                placeholder="p">
+                            <span>cm</span>
+                            <input id="pentagon2" class="w-20 h-8 outline-none p-2 pr-0 rounded" type="number"
+                                placeholder="b">
+                            <span>cm</span>
+                        </div>
+                        <div onclick="pentagonCalculate()" class="card-actions">
+                            <button class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- ellipse card -->
+                <div class="card bg-base-100 shadow-xl">
+                    <figure><img class="pt-3" src="./images/ellipse.png" alt="Triangle" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title w-auto mx-auto mb-2">Ellipse</h2>
+                        <p class="text-center mb-3">Area (A) = πab</p>
+                        <div class="flex justify-center gap-3 mb-2">
+                            <input id="ellipse1" class="w-20 h-8 outline-none p-2 pr-0 rounded" type="number"
+                                placeholder="b">
+                            <span>cm</span>
+                            <input id="ellipse2" class="w-20 h-8 outline-none p-2 pr-0 rounded" type="number"
+                                placeholder="h">
+                            <span>cm</span>
+                        </div>
+                        <div onclick="ellipseCalculate()" class="card-actions">
+                            <button class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <aside
+                class="bg-slate-600 text-slate-200 bg-opacity-60 md:w-[280px] md:p-4 rounded lg:w-[320px] fixed  right-3">
+                <div class="">
+                    <h2 class="text-center text-2xl mb-3">Total Calculation</h2>
+                    <h3 class="text-center text-xl">Output: <span id="output">00</span></h3>
+                </div>
+            </aside>
+        </section>
+
+    </main>
+    <script src="./app.js"></script>
+</body>
+
+</html>
